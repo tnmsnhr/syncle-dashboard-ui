@@ -1,0 +1,191 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.data-table-wrap {
+  @include card-surface;
+  overflow: hidden;
+}
+
+.data-table-scroll {
+  overflow-x: auto;
+  @include scrollbar-thin;
+}
+
+.data-table {
+  width: 100%;
+  font-size: 0.875rem;
+
+  th {
+    padding: $space-3 $space-4;
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    color: $color-text-secondary;
+    background: $color-bg;
+    border-bottom: 1px solid $color-border;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $space-3 $space-4;
+    border-bottom: 1px solid $color-border;
+    vertical-align: middle;
+  }
+
+  tbody tr {
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba($color-primary, 0.03);
+    }
+
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    color: $color-text;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $space-1;
+  }
+
+  .col-hide-sm {
+    display: none;
+
+    @include from-md {
+      display: table-cell;
+    }
+  }
+
+  .col-hide-md {
+    display: none;
+
+    @include from-lg {
+      display: table-cell;
+    }
+  }
+}
+
+.activity-list {
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $space-4;
+    padding: $space-3 0;
+    border-bottom: 1px solid $color-border;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__action {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    text-transform: capitalize;
+    margin-top: 2px;
+  }
+
+  &__time {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+.lesson-table {
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3;
+    padding: $space-4 0;
+    border-bottom: 1px solid $color-border;
+    align-items: center;
+
+    @include from-md {
+      grid-template-columns: 1.2fr 0.8fr 1.5fr auto;
+      gap: $space-4;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__mentor {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-md;
+    background: linear-gradient(135deg, $color-primary-light, $color-primary);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  &__name {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+  }
+
+  &__action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-text-secondary;
+    transition: background $transition-fast, color $transition-fast,
+      border-color $transition-fast;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:hover {
+      background: $color-primary-muted;
+      color: $color-primary;
+      border-color: transparent;
+    }
+  }
+}

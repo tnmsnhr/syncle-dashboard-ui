@@ -1,0 +1,58 @@
+@use "variables" as *;
+
+@mixin from-sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin from-md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin from-lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin from-xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba($color-primary, 0.25);
+}
+
+@mixin card-surface {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: $color-border-strong transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $color-border-strong;
+    border-radius: $radius-full;
+  }
+}

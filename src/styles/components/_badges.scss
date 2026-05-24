@@ -1,0 +1,92 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: $radius-sm;
+
+  &--primary {
+    background: $color-primary-muted;
+    color: $color-primary;
+  }
+
+  &--pink {
+    background: rgba($color-accent-pink, 0.12);
+    color: color.adjust($color-accent-pink, $lightness: -12%);
+  }
+
+  &--blue {
+    background: rgba($color-accent-blue, 0.12);
+    color: color.adjust($color-accent-blue, $lightness: -15%);
+  }
+
+  &--neutral {
+    background: $color-bg;
+    color: $color-text-secondary;
+  }
+
+  &--success {
+    background: rgba($color-success, 0.12);
+    color: color.adjust($color-success, $lightness: -10%);
+  }
+
+  &--warning {
+    background: rgba($color-warning, 0.12);
+    color: color.adjust($color-warning, $lightness: -12%);
+  }
+
+  &--danger {
+    background: rgba($color-danger, 0.1);
+    color: $color-danger;
+  }
+}
+
+.status-badge {
+  display: inline-flex;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: $radius-full;
+  border: 1px solid transparent;
+
+  &--synced {
+    background: rgba($color-success, 0.1);
+    color: color.adjust($color-success, $lightness: -8%);
+    border-color: rgba($color-success, 0.2);
+  }
+
+  &--syncing {
+    background: rgba($color-accent-blue, 0.1);
+    color: color.adjust($color-accent-blue, $lightness: -15%);
+    border-color: rgba($color-accent-blue, 0.2);
+  }
+
+  &--error {
+    background: rgba($color-danger, 0.08);
+    color: $color-danger;
+    border-color: rgba($color-danger, 0.2);
+  }
+
+  &--conflict {
+    background: rgba($color-warning, 0.1);
+    color: color.adjust($color-warning, $lightness: -12%);
+    border-color: rgba($color-warning, 0.2);
+  }
+}
+
+.tag {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: $color-text-secondary;
+  background: $color-bg;
+  border-radius: $radius-sm;
+}

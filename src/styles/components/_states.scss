@@ -1,0 +1,137 @@
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.empty-state {
+  @include card-surface;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $space-10 $space-6;
+  text-align: center;
+  border-style: dashed;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $color-text;
+  }
+
+  &__desc {
+    margin-top: $space-2;
+    max-width: 22rem;
+    font-size: 0.875rem;
+    color: $color-text-secondary;
+  }
+
+  &__action {
+    margin-top: $space-4;
+  }
+}
+
+.error-state {
+  @include card-surface;
+  padding: $space-6;
+  text-align: center;
+  border-color: rgba($color-danger, 0.25);
+  background: $color-danger-muted;
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: color.adjust($color-danger, $lightness: -8%);
+  }
+
+  &__message {
+    margin-top: $space-1;
+    font-size: 0.875rem;
+    color: $color-danger;
+  }
+}
+
+.mock-banner {
+  padding: $space-2 $space-4;
+  text-align: center;
+  font-size: 0.875rem;
+  color: color.adjust($color-warning, $lightness: -25%);
+  background: rgba($color-warning, 0.12);
+  border-bottom: 1px solid rgba($color-warning, 0.25);
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $color-primary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.page-header {
+  margin-bottom: $space-6;
+
+  &__desc {
+    margin-top: $space-2;
+    font-size: 0.875rem;
+    color: $color-text-secondary;
+  }
+}
+
+.page-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.page-stack--narrow {
+  max-width: 42rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+  margin-bottom: $space-4;
+}
+
+.pagination {
+  @include card-surface;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-3;
+  padding: $space-3 $space-4;
+  font-size: 0.875rem;
+
+  &__info {
+    color: $color-text-secondary;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-2;
+  }
+}
+
+.alert {
+  padding: $space-3;
+  font-size: 0.875rem;
+  border-radius: $radius-md;
+
+  &--error {
+    background: $color-danger-muted;
+    color: $color-danger;
+  }
+
+  &--warning {
+    background: rgba($color-warning, 0.12);
+    color: color.adjust($color-warning, $lightness: -20%);
+  }
+}

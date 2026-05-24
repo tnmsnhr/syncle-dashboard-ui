@@ -1,0 +1,151 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.auth-page {
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  padding: $space-4;
+  background: $color-bg;
+}
+
+.auth-card {
+  @include card-surface;
+  width: 100%;
+  max-width: 420px;
+  padding: $space-8 $space-6;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-lg;
+  text-align: center;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $space-6;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__desc {
+    margin-top: $space-2;
+    font-size: 0.875rem;
+    color: $color-text-secondary;
+    line-height: 1.55;
+  }
+
+  &__actions {
+    margin-top: $space-6;
+  }
+
+  &__google {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: $space-3;
+    padding: 0.875rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: $color-text;
+    background: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    transition: background $transition-fast, box-shadow $transition-fast;
+
+    &:hover:not(:disabled) {
+      background: $color-bg;
+      box-shadow: $shadow-md;
+    }
+
+    &:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+  }
+
+  &__footnote {
+    margin-top: $space-6;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+  }
+}
+
+.detail-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: $space-3;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2;
+}
+
+.chat-bubble {
+  padding: $space-3;
+  border-radius: $radius-md;
+  font-size: 0.875rem;
+
+  &--user {
+    background: $color-bg;
+  }
+
+  &--assistant {
+    @include card-surface;
+    box-shadow: none;
+    padding: $space-3;
+  }
+
+  &__role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $color-text-muted;
+    margin-bottom: $space-1;
+  }
+
+  &__time {
+    margin-top: $space-2;
+    font-size: 0.75rem;
+    color: $color-text-muted;
+  }
+}
+
+.memory-form-grid {
+  display: grid;
+  gap: $space-3;
+
+  @include from-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.profile-dl {
+  display: grid;
+  gap: $space-3;
+  font-size: 0.875rem;
+
+  @include from-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  dt {
+    color: $color-text-secondary;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+  }
+
+  dd {
+    font-weight: 600;
+    color: $color-text;
+  }
+}
