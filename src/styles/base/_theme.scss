@@ -1,0 +1,53 @@
+// Theme tokens as CSS custom properties (light default, dark via html.dark)
+
+:root {
+  color-scheme: light;
+
+  --color-bg: #f5f6fa;
+  --color-surface: #ffffff;
+  --color-border: #e8eaf3;
+  --color-border-strong: #d8dbe8;
+
+  --color-text: #1a1d2e;
+  --color-text-secondary: #6b7289;
+  --color-text-muted: #9aa0b8;
+
+  --color-primary-muted: rgba(108, 93, 211, 0.12);
+  --color-danger-muted: #fef2f2;
+
+  --color-topbar-bg: rgba(245, 246, 250, 0.92);
+  --color-overlay: rgba(26, 29, 46, 0.4);
+
+  --shadow-sm: 0 1px 3px rgba(26, 29, 46, 0.06);
+  --shadow-md: 0 4px 16px rgba(26, 29, 46, 0.08);
+  --shadow-lg: 0 8px 32px rgba(26, 29, 46, 0.1);
+
+  --color-skeleton-base: #e8eaf3;
+  --color-skeleton-highlight: #f0f1f6;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --color-bg: #0f1117;
+  --color-surface: #1a1d2e;
+  --color-border: #2a2e42;
+  --color-border-strong: #363b52;
+
+  --color-text: #f0f2f8;
+  --color-text-secondary: #a8aec4;
+  --color-text-muted: #6b7289;
+
+  --color-primary-muted: rgba(139, 126, 232, 0.22);
+  --color-danger-muted: rgba(239, 68, 68, 0.12);
+
+  --color-topbar-bg: rgba(15, 17, 23, 0.92);
+  --color-overlay: rgba(0, 0, 0, 0.55);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+
+  --color-skeleton-base: #2a2e42;
+  --color-skeleton-highlight: #363b52;
+}

@@ -34,6 +34,8 @@
   border: 1px solid $color-border;
   border-radius: $radius-lg;
   box-shadow: $shadow-sm;
+  transition: background-color $transition-base, border-color $transition-base,
+    box-shadow $transition-base;
 }
 
 @mixin truncate {

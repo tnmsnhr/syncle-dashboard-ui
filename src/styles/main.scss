@@ -1,9 +1,11 @@
 @use "abstracts/variables";
 @use "abstracts/mixins";
 
+@use "base/theme";
 @use "base/reset";
 @use "base/typography";
 
+@use "components/theme-toggle";
 @use "components/buttons";
 @use "components/cards";
 @use "components/forms";

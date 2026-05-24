@@ -4,7 +4,7 @@
 .sidebar-overlay {
   position: fixed;
   inset: 0;
-  background: rgba($color-text, 0.4);
+  background: $color-overlay;
   z-index: $z-overlay;
   opacity: 0;
   visibility: hidden;

@@ -2,6 +2,7 @@ import type { InputHTMLAttributes } from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../hooks/useAuth";
 import type { UserSettings } from "../types";
 import { getStoredSettings, saveStoredSettings } from "../utils/storage";
@@ -19,8 +20,9 @@ const defaultSettings: UserSettings = {
 export function SettingsPage() {
   const navigate = useNavigate();
   const { user, plan, usage, isAuthenticated, logout, logoutStatus } = useAuth();
+  const { preference, setPreference } = useTheme();
 
-  const { register, handleSubmit, watch, reset } = useForm<UserSettings>({
+  const { register, handleSubmit, watch, reset, setValue } = useForm<UserSettings>({
     defaultValues: getStoredSettings(defaultSettings),
   });
 
@@ -28,22 +30,21 @@ export function SettingsPage() {
     reset(getStoredSettings(defaultSettings));
   }, [reset]);
 
+  useEffect(() => {
+    setValue("theme", preference);
+  }, [preference, setValue]);
+
   const theme = watch("theme");
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else if (theme === "light") {
-      root.classList.remove("dark");
-    } else {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      root.classList.toggle("dark", prefersDark);
+    if (theme && theme !== preference) {
+      setPreference(theme);
     }
-  }, [theme]);
+  }, [theme, preference, setPreference]);
 
   const onSave = handleSubmit((values) => {
     saveStoredSettings(values);
+    setPreference(values.theme);
   });
 
   const handleLogout = async () => {

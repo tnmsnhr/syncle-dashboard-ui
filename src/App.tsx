@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
 import { RequireAuth } from "./components/RequireAuth";
 import DashboardLayout from "./layouts/DashboardLayout";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
@@ -12,6 +13,7 @@ import SyncPage from "./pages/SyncPage";
 
 export function App() {
   return (
+    <ThemeProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
@@ -33,6 +35,7 @@ export function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

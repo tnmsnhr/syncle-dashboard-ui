@@ -1,17 +1,7 @@
-// Coursue-inspired palette
+// Brand colors (consistent across themes)
 $color-primary: #6c5dd3;
 $color-primary-dark: #5b4ec4;
 $color-primary-light: #8b7ee8;
-$color-primary-muted: rgba(108, 93, 211, 0.12);
-
-$color-bg: #f5f6fa;
-$color-surface: #ffffff;
-$color-border: #e8eaf3;
-$color-border-strong: #d8dbe8;
-
-$color-text: #1a1d2e;
-$color-text-secondary: #6b7289;
-$color-text-muted: #9aa0b8;
 
 $color-accent-pink: #ff6b9d;
 $color-accent-blue: #4bc0ff;
@@ -21,7 +11,29 @@ $color-accent-mint: #3dd9b3;
 $color-success: #22c55e;
 $color-warning: #f59e0b;
 $color-danger: #ef4444;
-$color-danger-muted: #fef2f2;
+
+// Theme-aware tokens (CSS custom properties — see base/_theme.scss)
+$color-bg: var(--color-bg);
+$color-surface: var(--color-surface);
+$color-border: var(--color-border);
+$color-border-strong: var(--color-border-strong);
+
+$color-text: var(--color-text);
+$color-text-secondary: var(--color-text-secondary);
+$color-text-muted: var(--color-text-muted);
+
+$color-primary-muted: var(--color-primary-muted);
+$color-danger-muted: var(--color-danger-muted);
+
+$color-topbar-bg: var(--color-topbar-bg);
+$color-overlay: var(--color-overlay);
+
+$shadow-sm: var(--shadow-sm);
+$shadow-md: var(--shadow-md);
+$shadow-lg: var(--shadow-lg);
+
+$color-skeleton-base: var(--color-skeleton-base);
+$color-skeleton-highlight: var(--color-skeleton-highlight);
 
 $font-family: "Inter", system-ui, -apple-system, sans-serif;
 
@@ -31,15 +43,10 @@ $radius-lg: 16px;
 $radius-xl: 20px;
 $radius-full: 9999px;
 
-$shadow-sm: 0 1px 3px rgba(26, 29, 46, 0.06);
-$shadow-md: 0 4px 16px rgba(26, 29, 46, 0.08);
-$shadow-lg: 0 8px 32px rgba(26, 29, 46, 0.1);
-
 $sidebar-width: 260px;
 $right-panel-width: 300px;
 $topbar-height: 72px;
 
-// Mobile-first breakpoints
 $bp-sm: 640px;
 $bp-md: 768px;
 $bp-lg: 1024px;

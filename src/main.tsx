@@ -2,7 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./App";
+import { initTheme } from "./utils/theme";
 import "./styles/main.scss";
+
+initTheme();
 
 const queryClient = new QueryClient({
   defaultOptions: {

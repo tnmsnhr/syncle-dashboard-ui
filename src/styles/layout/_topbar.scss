@@ -10,7 +10,7 @@
   gap: $space-3;
   min-height: $topbar-height;
   padding: $space-3 $space-4;
-  background: rgba($color-bg, 0.92);
+  background: $color-topbar-bg;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid $color-border;
 

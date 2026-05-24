@@ -9,6 +9,7 @@ body {
   background: $color-bg;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color $transition-base, color $transition-base;
 }
 
 h1,

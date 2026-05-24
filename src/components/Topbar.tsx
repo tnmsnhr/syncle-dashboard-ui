@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { getInitials } from "../utils/greeting";
 import { IconMenu, IconSearch } from "./NavIcons";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface TopbarProps {
   onMenuClick: () => void;
@@ -50,6 +51,8 @@ export function Topbar({
       )}
 
       <div className="topbar__actions">
+        <ThemeToggle />
+
         {user && (
           <div className="topbar__user">
             <p className="topbar__name">{user.name ?? user.email ?? "User"}</p>

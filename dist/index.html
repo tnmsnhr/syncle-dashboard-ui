@@ -11,10 +11,23 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/index-BTceuuCj.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Xu8jGLKG.css">
+    <script type="module" crossorigin src="/assets/index-BTxu0C06.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BQhyN4D3.css">
   </head>
   <body>
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem("syncle_dashboard_settings");
+          var theme = raw ? JSON.parse(raw).theme : "system";
+          var dark =
+            theme === "dark" ||
+            (theme !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
     <div id="root"></div>
   </body>
 </html>
